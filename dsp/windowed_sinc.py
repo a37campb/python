@@ -117,13 +117,13 @@ f1 = 1000
 f2 = 5000
 f3 = 2000
 f4 = 4000
-samp_rate = 15360.0
+samp_rate_t = 15360.0
 samps = 15360
 
-y1 = [np.sin(2*np.pi*f1*i/samp_rate) for i in range(samps)]
-y2 = [np.sin(2*np.pi*f2*i/samp_rate) for i in range(samps)]
-y3 = [np.sin(2*np.pi*f3*i/samp_rate) for i in range(samps)]
-y4 = [np.sin(2*np.pi*f4*i/samp_rate) for i in range(samps)]
+y1 = [np.sin(2*np.pi*f1*i/samp_rate_t) for i in range(samps)]
+y2 = [np.sin(2*np.pi*f2*i/samp_rate_t) for i in range(samps)]
+y3 = [np.sin(2*np.pi*f3*i/samp_rate_t) for i in range(samps)]
+y4 = [np.sin(2*np.pi*f4*i/samp_rate_t) for i in range(samps)]
 
 y1 = np.array(y1)
 y2 = np.array(y2)
@@ -133,10 +133,10 @@ y = y1 + y2 + y3 + y4
 noise = y1 + y2 + y3
 y_f = np.fft.fft(y)
 freq_b = (np.abs(y_f))
-y_fil = filter().w_sinc_LPF(y,4500,samp_rate,1000)
+y_fil = filter().w_sinc_LPF(y,4500,samp_rate_t,1000)
 y_fft = np.fft.fft(y_fil)
 freq_a = (np.abs(y_fft))
-x = filter().windowed_sinc(4500,samp_rate,1000)
+x = filter().windowed_sinc(4500,samp_rate_t,1000)
 x_fft = np.abs(np.fft.fft(x))
 
 plt.subplot(5,1,1)

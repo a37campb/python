@@ -4,7 +4,6 @@ class Solution():
 
     def __init__(self, nums: List=NotImplemented):
         self.nums = nums
-        return None
 
     def singleInArray(self,nums: List[int]) -> int:
         for i in set(nums):
@@ -91,7 +90,7 @@ class Solution():
     def powerOfN(self,num:int,N:int)->bool:
         if num==0:
             return False
-        while(num%N==0):
+        while (num%N==0):
             num = num/N
         if num==1:
             return True
@@ -192,7 +191,7 @@ class Solution():
             local = local.replace('.','')
             email = local + '@' + domain
             uniques.add(email)
-        return(len(uniques))
+        return len(uniques)
 
 
     def firstUniqChar(self, s: str) -> int:

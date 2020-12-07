@@ -1,3 +1,5 @@
+import random
+
 class queue:
     def __init__(self):
         self.queue =[]
@@ -13,10 +15,10 @@ class queue:
 
     def removeFromQueue(self):
         if self.isEmpty != True:
-            return(self.queue.pop())
+            return (self.queue.pop())
         return None
 
-import random
+
 
 a = 'hello'
 a.count('l')
