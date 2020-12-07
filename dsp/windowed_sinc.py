@@ -3,13 +3,13 @@ from typing import List
 import numpy as np 
 import matplotlib.pyplot as plt
 
-class filter():
+class myfilter():
     def __init__(self):
         return None 
 
     def __dft(self,inp:np.array):
         arr = np.array(inp,dtype=float)
-        N = arr.shape[0]
+        N = arr.shape()[0]
         n = np.arange(N)
         k = n.reshape((N,1))
         M = np.exp(-2j * np.pi * k * n /N)
@@ -133,10 +133,10 @@ y = y1 + y2 + y3 + y4
 noise = y1 + y2 + y3
 y_f = np.fft.fft(y)
 freq_b = (np.abs(y_f))
-y_fil = filter().w_sinc_LPF(y,4500,samp_rate_t,1000)
+y_fil = myfilter().w_sinc_LPF(y,4500,samp_rate_t,1000)
 y_fft = np.fft.fft(y_fil)
 freq_a = (np.abs(y_fft))
-x = filter().windowed_sinc(4500,samp_rate_t,1000)
+x = myfilter().windowed_sinc(4500,samp_rate_t,1000)
 x_fft = np.abs(np.fft.fft(x))
 
 plt.subplot(5,1,1)

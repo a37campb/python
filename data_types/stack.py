@@ -17,6 +17,6 @@ class Stack:
         self.stack.append(val)
 
     def peak(self):
-        if self.is_empty() != True:
+        if not self.is_empty():
             return self.stack[-1]
         return None

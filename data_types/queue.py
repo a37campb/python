@@ -14,7 +14,7 @@ class queue:
         self.queue.insert(0,val)
 
     def removeFromQueue(self):
-        if self.isEmpty != True:
+        if not self.isEmpty:
             return (self.queue.pop())
         return None
 

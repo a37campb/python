@@ -90,7 +90,7 @@ class Solution():
     def powerOfN(self,num:int,N:int)->bool:
         if num==0:
             return False
-        while (num%N==0):
+        while num%N==0:
             num = num/N
         if num==1:
             return True
@@ -217,7 +217,7 @@ class Solution():
         digits = 1
         N = 1
         t = False
-        while t == False:
+        while not t:
             if N % K == 0:
                 t = True
                 return (digits,N)
