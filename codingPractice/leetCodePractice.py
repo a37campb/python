@@ -38,8 +38,7 @@ class Solution():
     
     def firstMissingPositive(self,nums: List[int]) -> int:
         if nums == []:
-            var = 1
-            return var
+            return 1
         lmt = max(nums)
         count = 0
         for _ in range(0,lmt+1):
@@ -102,7 +101,7 @@ class Solution():
             if i == []:
                 continue
             if i[0] <= target <= i[-1]:
-                if target == i[0] or target == i[-1]:
+                if target in (i[0],i[-1]):
                     return True
                 for j in i:
                     if j < target:
@@ -281,3 +280,4 @@ a = [
 
 
 # file deepcode ignore C1801: <ignore the len check to 0 deepcode foolishness>
+# file deepcode ignore R1710: <ignore linter for return statements>
