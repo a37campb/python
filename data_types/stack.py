@@ -11,11 +11,11 @@ class Stack:
     def pop(self):
         if not self.is_empty():
             self.stack.pop()
-        return None
 
     def insert(self,val):
         self.stack.append(val)
-
+    
     def peak(self):
+        #  deepcode ignore R1710: <deepcode being dumb>
         if not self.is_empty():
             return self.stack[-1]

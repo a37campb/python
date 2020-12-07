@@ -27,11 +27,11 @@ class FreqStack:
         return self.stack.pop(idx)
 
 #["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"]
-x = [5,7,5,7,4,5]
+xx = [5,7,5,7,4,5]
 y = [[],[],[],[]]
 obj = FreqStack()
-for i in x:
-    obj.push(i)
+for ii in xx:
+    obj.push(ii)
 for _ in y:
     obj.pop()
 

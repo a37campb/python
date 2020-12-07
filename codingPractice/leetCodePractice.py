@@ -278,3 +278,7 @@ a = [
 #print(Solution().duplicatesInArray([4,3,2,7,8,2,3,1]))
 #print(Solution().firstMissingPositive([0,1,2,3,-1,-10,-2,4,5,6,7,8,9,11]))
 #print(Solution().twoSum([3,3,5,5,5],8))
+
+
+
+# file deepcode ignore C1801: <ignore the len check to 0 deepcode foolishness>
