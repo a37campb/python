@@ -1,0 +1,1 @@
+print("Hey dickhead this is a new motherrfucking language\n")
