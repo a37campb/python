@@ -83,3 +83,6 @@ int main ( )
         qplcon((float*) field, MATSIZE, MATSIZE, numberOfContours);
     }  
 }
+
+
+// file deepcode ignore CppSameEvalBinaryExpressiontrue: <dislin causing a deepcode problem>
