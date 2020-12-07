@@ -1,1 +1,1 @@
-print("Hey dickhead this is a new motherrfucking language\n")
+print("Hey this is a new language\n")
