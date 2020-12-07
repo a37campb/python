@@ -1,10 +1,4 @@
 
-%Name: Adam Campbell
-%Quest ID: a37campb
-%Date: September 20, 2020
-%Due date: September 25, 2020
-%Assignment 1 Problem2
-
 
 angle = pi/2;
 testRC = -1i*[0 1 0;-1 0 0; 0 0 0];

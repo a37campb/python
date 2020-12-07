@@ -1,11 +1,4 @@
 
-%Name: Adam Campbell
-%Quest ID: a37campb
-%Date: September 20, 2020
-%Due date: September 25, 2020
-%Assignment 1 Problem1
-
-
 x_0 = 1;
 v_0 = 0;
 m = 1;

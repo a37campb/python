@@ -1,9 +1,4 @@
-/*
-Adam Campbell (a37campb)
-20649284
-Assignment 7, Problem 2
-Last Modified: November 16, 2020
-*/
+
 
 #include <discpp.h>
 #include <iostream>

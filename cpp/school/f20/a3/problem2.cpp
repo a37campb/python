@@ -1,9 +1,3 @@
-/*
-Adam Campbell (a37campb)
-20649284
-Assignment 3, Problem 2
-Written: October 8, 2020
-*/
 
 #include <dislin.h>
 #include <iostream>

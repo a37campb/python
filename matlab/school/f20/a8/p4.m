@@ -1,7 +1,4 @@
-% Adam Campbell (a37campb)
-% 20649284
-% Assignment 8, Problem 4
-% Written: November 20, 2020
+
 
 % Monte Carlo Method for x^2 + y^2 = 1
 

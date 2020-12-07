@@ -1,7 +1,4 @@
-%Name: Adam Campbell (a37campb)
-%20649284
-%Assignment 8 Problem 2
-%Last Modified: November 19, 2020
+
 
 %set up the function. 
 %Then, do fft and apply 5th order hamming window

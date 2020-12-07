@@ -1,9 +1,4 @@
-/*
-Adam Campbell (a37campb)
-20649284
-Assignment 8, Problem 1
-Written: November 19, 2020
-*/
+
 
 #include <iostream>
 #include <cmath>

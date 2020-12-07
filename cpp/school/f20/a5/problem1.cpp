@@ -1,10 +1,3 @@
-/*
-Adam Campbell (a37campb)
-20649284
-Assignment 5, Problem 1
-Written: October 31, 2020
-*/
-
 #include <iostream>
 #include <fstream>
 #include <string>
