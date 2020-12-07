@@ -1,7 +1,7 @@
 #audio signals for processing
-import numpy as np 
 import wave
 import struct
+import numpy as np 
 import matplotlib.pyplot as plt 
 
 f = 1000

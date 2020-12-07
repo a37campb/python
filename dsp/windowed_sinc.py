@@ -9,7 +9,7 @@ class myfilter():
 
     def __dft(self,inp:np.array):
         arr = np.array(inp,dtype=float)
-        N = arr.shape()[0]
+        N = np.shape(arr)[0]
         n = np.arange(N)
         k = n.reshape((N,1))
         M = np.exp(-2j * np.pi * k * n /N)
@@ -20,14 +20,14 @@ class myfilter():
 
     def __fft(self, inp:np.array) -> List[float]:
         arr = np.array(inp)
-        N = arr.shape[0]
+        N = np.shape(arr)[0]
         if N%2 != 0:
             raise ValueError("Must be a power of 2")
         elif N<=2:
-            return filter.__dft(self, arr)
+            return myfilter.__dft(self, arr)
         else:
-            even = filter.__fft(self, arr[::2])
-            odd = filter.__fft(self, arr[1::2])
+            even = myfilter.__fft(self, arr[::2])
+            odd = myfilter.__fft(self, arr[1::2])
             terms = np.exp(-2j * np.pi * np.arange(N) / N)
         return np.concatenate([even + terms[:int(N/2)] * odd, even + terms[int(N/2):] * odd])
 
@@ -108,9 +108,9 @@ class myfilter():
                 out[i] += inp[i-j]*H_pad[j]
         return out
     
-    def w_sinc_BPF(self, inp:np.array, f1: int, f2: int, samp_rate: float, M1:int, M2:int)-> np.array:
-        out1 = self.w_sinc_HPF(inp,f1,samp_rate,M1)
-        out2 = self.w_sinc_LPF(inp,f2,samp_rate,M2)
+    def w_sinc_BPF(self, inp:np.array, freq1: int, freq2: int, samp_rate: float, M1:int, M2:int)-> np.array:
+        out1 = self.w_sinc_HPF(inp,freq1,samp_rate,M1)
+        out2 = self.w_sinc_LPF(inp,freq2,samp_rate,M2)
         return out1+out2
 
 f1 = 1000

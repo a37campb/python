@@ -9,7 +9,7 @@ class Stack:
         return self.size() == 0
 
     def pop(self):
-        if self.is_empty() != True:
+        if not self.is_empty():
             self.stack.pop()
         return None
 
@@ -19,4 +19,3 @@ class Stack:
     def peak(self):
         if not self.is_empty():
             return self.stack[-1]
-        return None

@@ -1,5 +1,3 @@
-import random
-
 class queue:
     def __init__(self):
         self.queue =[]
@@ -15,7 +13,7 @@ class queue:
 
     def removeFromQueue(self):
         if not self.isEmpty:
-            return (self.queue.pop())
+            return self.queue.pop()
         return None
 
 

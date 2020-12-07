@@ -1,5 +1,3 @@
-from typing import List
-
 #Singly Linked list -> move in one direction
 class node():
     def __init__(self,val1:int=None, val2:int=None):

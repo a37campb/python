@@ -1,7 +1,8 @@
 
 def firstMissingPositive(nums):
     if nums == []:
-        return 1
+        var = 1
+        return var
     lmt = max(nums)
     count = 0
     for _ in range(0,lmt+1):
