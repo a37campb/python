@@ -36,8 +36,8 @@ class myfilter():
     
     def sign_flip(self, H:List[float])->List[float]:
         temp = [0]*len(H)
-        for i in range(len(H)):
-            temp[i] = -1*H[i]
+        for i, val in enumerate(H):
+            val = -1*val
         return temp
 
     def windowed_sinc(self, f: int, samp_rate: float, M:int) -> List[float]:
@@ -64,16 +64,16 @@ class myfilter():
 
         fc = f/samp_rate
 
-        for i in range(len(H)):
+        for i, val in enumerate(H):
             if i-M/2 == 0:
-                H[i] = -1 * 2*np.pi*fc #K = 1
+                val = -1 * 2*np.pi*fc #K = 1
             else:
                 #H[i] = (np.sin(2*np.pi*fc*(i-M/2))/(i-M/2)) * np.blackman(2*np.pi*i/M) #K = 1
-                H[i] = (np.sin(2*np.pi*fc*(i-M/2))/(i-M/2)) * ( 0.42-0.5*np.cos(2*np.pi*i/M) + 0.08*np.cos(4*np.pi*i/M)) #K = 1
-            summa += H[i]
+                val = (np.sin(2*np.pi*fc*(i-M/2))/(i-M/2)) * ( 0.42-0.5*np.cos(2*np.pi*i/M) + 0.08*np.cos(4*np.pi*i/M)) #K = 1
+            summa += val
 
-        for i in range(len(H)):
-            H[i] /= summa
+        for _, val in enumerate(H):
+            val /= summa
         return H
 
     def w_sinc_LPF(self, inp: np.array, f: int, samp_rate: float, M:int) -> np.array:
@@ -104,8 +104,8 @@ class myfilter():
         H_pad = H + [0]*(len(inp)-len(H))
         for i in range(M,len(inp)):
             out[i] = 0
-            for j in range(len(H_pad)):
-                out[i] += inp[i-j]*H_pad[j]
+            for j, val in enumerate(H_pad):
+                out[i] += inp[i-j]*val
         return out
     
     def w_sinc_BPF(self, inp:np.array, freq1: int, freq2: int, samp_rate: float, M1:int, M2:int)-> np.array:

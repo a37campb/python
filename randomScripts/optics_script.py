@@ -7,8 +7,8 @@ v = []
 v_rev = []
 rad = 20.58*10**(-3)
 wave = 1550*10**(-9) 
-for i in range(len(raw)):
-    val = raw[i]*10**6
+for i,num in enumerate(raw):
+    val = num*10**6
     dop += [val]
     val_v = val*wave/(2*math.cos(angle[i]*math.pi/180))
     v += [val_v]

@@ -38,7 +38,8 @@ class Solution():
     
     def firstMissingPositive(self,nums: List[int]) -> int:
         if nums == []:
-            return 1
+            var = 1
+            return var
         lmt = max(nums)
         count = 0
         for _ in range(0,lmt+1):
@@ -81,10 +82,10 @@ class Solution():
         num1_int = 0
         num2_int = 0
         #if len(num1) > 1:
-        for i in range(len(num1)):
-            num1_int += u[num1[i]]*10**(len(num1)-1-i)
-        for j in range(len(num2)):
-            num2_int += u[num2[j]]*10**(len(num2)-1-j)
+        for i,val in enumerate(num1):
+            num1_int += u[val]*10**(len(num1)-1-i)
+        for j,val in enumerate(num2):
+            num2_int += u[val]*10**(len(num2)-1-j)
         return str(num1_int*num2_int)
 
     def powerOfN(self,num:int,N:int)->bool:
@@ -101,9 +102,7 @@ class Solution():
             if i == []:
                 continue
             if i[0] <= target <= i[-1]:
-                if target == i[0]:
-                    return True
-                elif target == i[-1]:
+                if target == i[0] or target == i[-1]:
                     return True
                 for j in i:
                     if j < target:
@@ -118,11 +117,11 @@ class Solution():
         from random import choice as c
         nums = self.nums
         u = dict()
-        for i in range(len(nums)): 
-            if nums[i] in u:
-                u[nums[i]] += (i,)
+        for i, val in enumerate(nums): 
+            if val in u:
+                u[val] += (i,)
             else:
-                u[nums[i]] = (i,)
+                u[val] = (i,)
         return c(u[target])
 
     def fizzBuzz(self,n:int) -> List[str]:
@@ -156,10 +155,10 @@ class Solution():
     def addStrings(self,num1:str,num2:str) -> str:
         num1_s,num2_s = 0,0
         u = {'0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}
-        for i in range(len(num1)):
-            num1_s += u[num1[i]]*10**(len(num1)-1-i)
-        for j in range(len(num2)):
-            num2_s += u[num2[j]]*10**(len(num2)-1 -j)
+        for i,val in enumerate(num1):
+            num1_int += u[val]*10**(len(num1)-1-i)
+        for j,val in enumerate(num2):
+            num2_int += u[val]*10**(len(num2)-1-j)
         return str(num2_s+num1_s)
 
     def hammingDist(self,n1:int,n2:int) -> int:
@@ -171,16 +170,16 @@ class Solution():
             n1_b = '0'*diff + n1_b
         elif len(n1_b) > len(n2_b):
             n2_b = '0'*diff + n2_b
-        for i in range(len(n1_b)):
-            if n1_b[i] != n2_b[i]:
+        for i, val in enumerate(n1_b):
+            if val != n2_b[i]:
                 ans += 1
         return ans
 
     def totalHammingDist(self, nums:List[int]) -> int:
         summa = 0
-        for i in range(len(nums)):
+        for i, val in enumerate(nums):
              for j in range(i+1,len(nums)):
-                summa += self.hammingDist(nums[i],nums[j])   
+                summa += self.hammingDist(val,nums[j])   
         return summa
 
     def uniqueEmail(self,emails:List[str]) -> int:
@@ -196,13 +195,13 @@ class Solution():
 
     def firstUniqChar(self, s: str) -> int:
         u = {}
-        for i in range(len(s)):
-            if s[i] not in u:
-                u[s[i]] = (1,(i,))
+        for i, val in enumerate(s):
+            if val not in u:
+                u[val] = (1,(i,))
             else:
-                count = u[s[i]][0] + 1
-                index = u[s[i]][1] + (i,)
-                u[s[i]] = (count,index)
+                count = u[val][0] + 1
+                index = u[val][1] + (i,)
+                u[val] = (count,index)
         idx = []
         for t in u:
             if u[t][0] == 1:
@@ -228,12 +227,12 @@ class Solution():
     def maxConsecutiveOnes(self, nums:List[int]) -> int:
         counter = 0
         maxval = 0
-        for i in range(len(nums)): 
-            if nums[i] == 1:
+        for i, val in enumerate(nums): 
+            if val == 1:
                 counter += 1
                 if i == len(nums) - 1:
                     maxval = max(maxval,counter)
-            elif nums[i] == 0:
+            elif val == 0:
                 maxval = max(maxval,counter)
                 counter = 0
         return maxval
